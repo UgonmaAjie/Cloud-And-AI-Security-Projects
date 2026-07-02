@@ -1,4 +1,4 @@
-# Microsoft 365 Custom Subdomain Configuration Using QServers
+# Microsoft 365 Custom Subdomain Configuration
 
 ## Project Overview
 
