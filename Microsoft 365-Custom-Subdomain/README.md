@@ -100,7 +100,7 @@ These records enabled Microsoft 365 services such as authentication, email deliv
 
 After the DNS records propagated:
 
-- The subdomain was successfully verified.
+- The subdomain "dailyseed.name.ng" was successfully verified.
 - Microsoft 365 recognized the custom subdomain.
 - The subdomain became available for user accounts and Microsoft 365 services.
   
