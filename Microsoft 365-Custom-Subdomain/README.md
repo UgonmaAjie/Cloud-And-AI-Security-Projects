@@ -145,20 +145,6 @@ This project provided hands-on experience with:
 
 ---
 
-## Screenshots
-
-Include screenshots of the following:
-
-1. Domain purchased in QServers.
-2. DNS Management page in QServers.
-3. Microsoft 365 "Add Domain" page.
-4. TXT record verification.
-5. Successful domain verification.
-6. DNS records configured.
-7. Subdomain listed in Microsoft 365.
-8. (Optional) User account created using the custom subdomain.
-
-> **Note:** Ensure that all sensitive information such as tenant IDs, verification codes, domain ownership details, and email addresses are blurred or redacted before publishing screenshots.
 
 ---
 
