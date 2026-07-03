@@ -92,6 +92,7 @@ Configured the required DNS records provided by Microsoft 365, including:
 
 These records enabled Microsoft 365 services such as authentication, email delivery, and service discovery.
 
+![](https://github.com/UgonmaAjie/Cloud-And-AI-Security-Projects/blob/main/Microsoft%20365-Custom-Subdomain/Domain%20setup.png)
 
 ---
 
@@ -102,7 +103,8 @@ After the DNS records propagated:
 - The subdomain was successfully verified.
 - Microsoft 365 recognized the custom subdomain.
 - The subdomain became available for user accounts and Microsoft 365 services.
-![](
+  
+![](https://github.com/UgonmaAjie/Cloud-And-AI-Security-Projects/blob/main/Microsoft%20365-Custom-Subdomain/Domain%20test.png)
 
 ---
 
