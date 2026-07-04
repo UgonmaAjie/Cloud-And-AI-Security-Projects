@@ -1,4 +1,4 @@
-# Monitoring User Access to Microsoft Forms Using Microsoft Defender for Cloud Apps and Microsoft Entra ID
+# Monitoring User Access to Microsoft Form Using Microsoft Defender for Cloud Apps and Microsoft Entra ID
 
 ## Overview
 
@@ -49,7 +49,6 @@ For this project, I aimed to:
 | Session Control | Conditional Access App Control |
 | Enforcement Mode | Monitor only |
 
----
 ---
 
 ## Architecture
