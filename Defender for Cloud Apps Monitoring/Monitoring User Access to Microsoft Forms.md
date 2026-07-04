@@ -1,145 +1,128 @@
 # Monitoring User Access to Microsoft Forms Using Microsoft Defender for Cloud Apps and Microsoft Entra ID
 
-## Project Overview
+## Overview
 
-This project demonstrates how to monitor a user's access to Microsoft Forms by integrating Microsoft Entra ID Conditional Access with Microsoft Defender for Cloud Apps (MDCA).
+This project demonstrates how I used Microsoft Entra ID Conditional Access and Microsoft Defender for Cloud Apps (MDCA) to monitor a user's access to Microsoft Forms.
 
-In this scenario, a user named **Pedro** is required to use Microsoft Forms to access sensitive organizational forms. Rather than restricting his access, the security team wants to gain visibility into his activities by monitoring his sessions and generating alerts whenever he accesses Microsoft Forms.
+The objective was to provide visibility into a specific user's cloud application activity without interrupting normal business operations. To achieve this, I configured Conditional Access App Control in **Monitor only** mode and created an Activity Policy in Microsoft Defender for Cloud Apps to generate alerts whenever the monitored user accessed Microsoft Forms.
 
-To achieve this, Conditional Access App Control was configured in **Monitor only** mode, allowing administrators to observe Pedro's activity without interrupting his workflow.
-
----
-
-## Project Scenario
-
-A security administrator has been asked to monitor a specific employee's access to Microsoft Forms.
-
-The objective is to:
-
-- Monitor Pedro's Microsoft Forms sessions.
-- Generate security alerts whenever Pedro accesses Microsoft Forms.
-- Gain visibility into Pedro's activities.
-- Allow uninterrupted access while monitoring user behavior.
-
-This implementation enables administrators to evaluate user activity before enforcing stricter security controls if necessary.
+This project demonstrates how organizations can monitor user sessions, improve visibility into cloud application usage, and collect security insights before enforcing stricter access controls.
 
 ---
 
-## Technologies Used
+## Business Scenario
 
-- Microsoft Entra ID
-- Microsoft Defender for Cloud Apps (MDCA)
-- Microsoft Forms
-- Conditional Access
-- Conditional Access App Control
-- Activity Policies
+An organization wanted to monitor the Microsoft Forms activity of a user named **Pedro** because the application contained sensitive business forms.
+
+Instead of blocking access, the security team wanted to:
+
+- Monitor Pedro's access to Microsoft Forms.
+- Generate alerts whenever he accessed the application.
+- Record his activities for auditing and investigation.
+- Evaluate user behavior before implementing stricter security controls.
+
+As the Microsoft 365 Security Administrator, I implemented a monitoring solution using Microsoft Entra ID and Microsoft Defender for Cloud Apps.
 
 ---
 
-## Architecture
+## Objectives
 
-```
-Pedro
-   │
-   ▼
-Microsoft Entra ID
-   │
-Conditional Access Policy
-   │
-Use Conditional Access App Control
-(Monitor only)
-   │
-   ▼
-Microsoft Defender for Cloud Apps
-   │
-Activity Policy
-   │
-Alerts & Activity Logs
-```
+For this project, I aimed to:
+
+- Configure a Conditional Access policy for a specific user.
+- Enable Conditional Access App Control in **Monitor only** mode.
+- Integrate Microsoft Entra ID with Microsoft Defender for Cloud Apps.
+- Create an Activity Policy to monitor Microsoft Forms access.
+- Generate alerts whenever the monitored user accessed Microsoft Forms.
+- Validate that user activities were successfully captured.
+
+---
+
+## Environment
+
+| Component | Configuration |
+|-----------|---------------|
+| Identity Platform | Microsoft Entra ID |
+| Cloud Security Solution | Microsoft Defender for Cloud Apps |
+| Cloud Application | Microsoft Forms |
+| Monitored User | Pedro |
+| Session Control | Conditional Access App Control |
+| Enforcement Mode | Monitor only |
 
 ---
 
 ## Implementation
 
-### Step 1: Configure Conditional Access
+### Step 1 – Configure the Conditional Access Policy
 
-A Conditional Access policy was created in Microsoft Entra ID with the following configuration:
+I created a Conditional Access policy targeting the user **Pedro**.
 
-- **User:** Pedro
-- **Target Resource:** Microsoft Forms
-- **Session Control:** Use Conditional Access App Control
-- **Mode:** Monitor only
+The policy targeted Microsoft Forms and enabled **Conditional Access App Control** using **Monitor only** mode. This configuration redirected Pedro's session through Microsoft Defender for Cloud Apps without restricting his access.
 
-This configuration redirects Pedro's Microsoft Forms session through Microsoft Defender for Cloud Apps, enabling session monitoring without blocking access.
+> **Screenshot:** Conditional Access Policy
 
 ---
 
-### Step 2: Configure Microsoft Defender for Cloud Apps
+### Step 2 – Configure an Activity Policy
 
-After enabling Conditional Access App Control, an Activity Policy was created in Microsoft Defender for Cloud Apps.
+Next, I navigated to Microsoft Defender for Cloud Apps and created an **Activity Policy**.
 
-The policy was configured to:
+The policy was configured to monitor Pedro's activity whenever he accessed Microsoft Forms and to generate alerts for security monitoring purposes.
 
-- Monitor Pedro's activity.
-- Detect access to Microsoft Forms.
-- Generate alerts whenever Pedro accessed the application.
-- Record activity for investigation and auditing purposes.
+> **Screenshot:** Activity Policy
 
 ---
 
-### Step 3: Test the Configuration
+### Step 3 – Validate the Configuration
 
-The policy was validated by signing in as Pedro and accessing Microsoft Forms.
+To validate the implementation, I signed in as Pedro and accessed Microsoft Forms.
 
-During testing:
+The session displayed a monitoring notification indicating that the session was being monitored through Microsoft Defender for Cloud Apps.
 
-- Pedro successfully accessed Microsoft Forms.
-- A session notification appeared informing the user that the session was being monitored.
-- Microsoft Defender for Cloud Apps recorded the activity.
-- Alerts were generated according to the configured Activity Policy.
+I then confirmed that:
 
----
+- The activity was recorded.
+- An alert was generated.
+- The activity appeared in the Defender for Cloud Apps activity log.
 
-## Expected Outcome
+> **Screenshot:** Monitoring Notification
 
-After completing the implementation:
+> **Screenshot:** Activity Log
 
-- Pedro can continue accessing Microsoft Forms normally.
-- Every monitored session is routed through Microsoft Defender for Cloud Apps.
-- Administrators receive alerts whenever Pedro accesses Microsoft Forms.
-- User activities are recorded for auditing and investigation.
-- No access is blocked because the policy operates in **Monitor only** mode.
+> **Screenshot:** Alert Generated
 
 ---
 
-## Security Benefits
+## Results
 
-- Provides visibility into user activity.
-- Enables real-time monitoring of cloud application sessions.
-- Generates security alerts for monitored users.
-- Supports auditing and compliance requirements.
-- Allows organizations to evaluate user behavior before enforcing stricter controls.
+The implementation was successful.
+
+The monitored user was able to continue using Microsoft Forms without interruption while Microsoft Defender for Cloud Apps monitored the session in real time.
+
+The solution provided:
+
+- Visibility into user activity.
+- Automated alert generation.
+- Activity logging for auditing.
+- A non-intrusive monitoring solution using **Monitor only** mode.
 
 ---
 
 ## Skills Demonstrated
 
-- Microsoft Entra ID Administration
-- Conditional Access Policy Configuration
+- Microsoft Entra ID
+- Conditional Access
 - Conditional Access App Control
 - Microsoft Defender for Cloud Apps
-- Activity Policy Configuration
+- Activity Policies
 - Cloud Application Security
-- Session Monitoring
-- Security Monitoring and Alerting
+- Security Monitoring
+- Microsoft 365 Security Administration
 
 ---
 
+## Conclusion
 
-## Key Takeaways
+This project demonstrates my ability to implement Microsoft Entra ID Conditional Access together with Microsoft Defender for Cloud Apps to monitor cloud application usage.
 
-This project demonstrates how Microsoft Entra ID and Microsoft Defender for Cloud Apps work together to provide visibility into cloud application usage.
-
-By using **Conditional Access App Control** in **Monitor only** mode, organizations can observe user behavior, generate alerts, and collect valuable security insights without disrupting productivity.
-
-This approach is especially useful when evaluating security policies before transitioning to stricter access controls such as blocking downloads, preventing uploads, or enforcing session restrictions.
+By using **Conditional Access App Control** in **Monitor only** mode, I was able to provide visibility into user sessions, generate security alerts, and record activities without disrupting the user's workflow. This approach enables organizations to assess user behavior and validate security policies before applying more restrictive controls.
